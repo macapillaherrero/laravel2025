@@ -34,7 +34,7 @@
       - ./mysql/data:/var/lib/mysql
       - ./mysql/tmp:/tmp
     ports:
-      - "3306:3306"
+      - "3307:3306"
     networks:
       - default
 
