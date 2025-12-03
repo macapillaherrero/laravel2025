@@ -6,11 +6,12 @@
     volumes:
       - ./src:/var/www/html
       - ./php/conf.d/99-xdebug.ini:/usr/local/etc/php/conf.d/99-xdebug.ini
-    environment:
+    environment:    
       - MYSQL_HOST=mysql
+      - MYSQL_DB=test
       - MYSQL_USER=alumno
       - MYSQL_PASSWORD=alumno
-      - MYSQL_DB=test
+      
   nginx:
     image: nginx:latest
     container_name: dk_nginx
@@ -34,7 +35,7 @@
       - ./mysql/data:/var/lib/mysql
       - ./mysql/tmp:/tmp
     ports:
-      - "3307:3306"
+      - "3306:3306"
     networks:
       - default
 
